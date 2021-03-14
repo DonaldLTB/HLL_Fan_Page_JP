@@ -13,7 +13,7 @@ puts "All clean"
 # Users
 puts "Creating random times"
 n = 0
-role = ["Tank", "Healer", "DPS"] # 2 tanks, 2 healers, 4 DPS per team max
+role = ["Commander", "Officer", "Rifleman", "Antitank", "Machine Gunner", "Assault", "Medic", "Engineer", "Support", "Automatic Rifleman", "Spotter", "Tank Commander", "Crewman"]
 def random_start_end_time(start_time, end_time)
   array = []
   half_hour = [3, 0] # usage: #{half_hour.sample}
