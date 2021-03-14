@@ -1,1 +1,14 @@
-show.html.erb
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://p82.f1.n0.cdn.getcloudapp.com/items/YEuXB4Pj/725a5ca9-290c-406a-99ce-3f3aea2529ae.png?source=viewer&v=733bc8b84c6772f52aaef17de2a7035f);">
+    <div class="container">
+      <div class="card-product p-1 text-left" style="background-color:transparent;">
+        <img src="<%= @user.avatar %>" alt="<%= @user.nickname %>" style="margin-top:-30px;height:115px;border-radius:50%;">
+        <div style="margin-left: 16px">
+          <h2><%= @user.role %></h2>
+          <h1><%= @user.nickname %></h1>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
