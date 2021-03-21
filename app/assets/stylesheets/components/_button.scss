@@ -1,0 +1,135 @@
+.btn:hover {
+    text-decoration: none;
+    box-shadow: 4px 4px 4px #00000080;
+}
+
+.btn-pink {
+    padding: 4px;
+    padding-top: 6px;
+    background-color: #FF368D;
+    border: none;
+    font-family: "Tungsten" !important;
+    text-shadow: 0px 2px 2px #00000080;
+    color: white;
+    font-size: 24px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px #00000080;
+}
+
+.btn-blue {
+    padding: 4px;
+    padding-top: 6px;
+    background-color: #3644ff;
+    border: none;
+    font-family: "Tungsten";
+    text-shadow: 0px 2px 2px #00000080;
+    color: white;
+    font-size: 24px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px #00000080;
+}
+
+.btn-accept {
+    width: 194px;
+    color: white;
+    background-color: #3644ff;
+    box-shadow: 2px 2px 4px #00000080;
+    border-radius: 6px;
+    margin-top: -6px;
+}
+
+.btn-deny {
+    width: 194px;
+    color: #fff;
+    background-color: #FF368D;
+    box-shadow: 2px 2px 4px #00000080;
+    margin-left: 4px;
+    border-radius: 6px;
+    margin-top: -6px;
+}
+
+.edit-profile-button {
+    position: absolute;
+    bottom: -210px;
+    left: 16px;
+    color: white;
+    width: 540px;
+
+}
+
+.edit-schedule-button {
+    position: absolute;
+    bottom: -1px;
+    right: 280px;
+    background-color: #3644ff;
+    width: 400px;
+    margin-bottom: 40px;
+    height: 80px;
+    font-family: "Tungsten";
+    text-shadow: 0px 2px 2px #000000;
+    font-size: 40px;
+    border: none;
+
+
+}
+
+.edit-schedule-button:hover {
+    background-color: #1721a8;
+
+}
+
+
+.edit-schedule-button2 {
+    position: absolute;
+    bottom: -210px;
+    right: -405px;
+    color: white;
+    width: 310px;
+
+}
+
+.edit-schedule-button3 {
+    padding: 4px;
+    padding-top: 6px;
+    background-color: #3644ff;
+    border: none;
+    position: absolute;
+    bottom: -56px;
+    right: 0px;
+    width: 403px;
+    font-family: "Tungsten";
+    text-shadow: 0px 2px 2px #00000080;
+    color: white;
+    font-size: 24px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px #00000080;
+}
+
+.edit-schedule-button4 {
+    padding: 4px;
+    padding-top: 6px;
+    background-color: #3644ff;
+    border: none;
+    position: absolute;
+    bottom: -47px;
+    right: 0px;
+    width: 435px;
+    font-family: "Tungsten";
+    text-shadow: 0px 2px 2px #00000080;
+    color: white;
+    font-size: 24px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px #00000080;
+}
+
+
+
+.edit-schedule-button3:hover {
+    background-color: #1721a8;
+}
+
+.edit-schedule-button4:hover {
+    background-color: #1721a8 !important;
+    color: white !important;
+}
+
