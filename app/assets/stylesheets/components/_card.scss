@@ -1,0 +1,393 @@
+// Clanparty Classes
+.card {
+  border: 1px solid #212121;
+}
+
+.card-team {
+  padding-top: 16px;
+}
+
+.team-header p {
+  font-family: Helvetica Neue Regular;
+  font-size: 16px;
+  color: #808080;
+  text-shadow: 0px 2px 2px #000000;
+}
+
+.card-outer-header {
+  font-family: Tungsten;
+  font-size: 36px;
+  color: white;
+  text-shadow: 0px 2px 2px #00000080;
+}
+
+
+.card-inner-header h2 {
+  font-family: Helvetica Neue Bold;
+  font-size: 24px;
+  color: white;
+  text-shadow: 0px 2px 2px #00000080;
+}
+
+.card-inner-header a {
+  color: white;
+  font-family: Helvetica Neue Bold;
+  font-size: 24px;
+}
+
+.card p {
+  font-family: Helvetica Neue Regular;
+  font-size: 16px;
+  color: white;
+  margin-top: 8px;
+}
+
+.card-hours {
+  font-family: Helvetica Neue Bold;
+  font-size: 16px;
+  color: white;
+}
+
+.card-inner-team {
+  border-radius:6px;
+  background-color:#0D0D0DF2;
+  box-shadow: 2px 2px 4px #00000080;
+}
+
+.card-day {
+  font-family: Helvetica Neue Condensed Black;
+  font-size: 32px;
+  color: white;
+  margin-bottom: -8px;
+}
+
+.card-event-header {
+  font-family: Helvetica Neue Medium;
+  font-size: 16px;
+  color: white;
+  margin-left: 20px;
+}
+
+.card-category {
+  width: 100%;
+  padding: 10px;
+  background-color: #0D0D0DF2;
+  box-shadow: 2px 2px 4px #00000080;
+}
+
+.card-member-role {
+  font-family: Helvetica Neue Medium;
+  font-size: 16px;
+  margin-bottom: 0px;
+  color: #FF368D;
+}
+
+.card-member-avatar {
+  border-radius: 8px;
+  height:80px;
+  width:80px;
+  margin: 12px;
+}
+.background-gradient-schedule-user {
+  background: linear-gradient(to bottom, #BF00FF,#361075);
+  border-radius: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 72px;
+}
+
+.background-gradient-schedule {
+  background: linear-gradient(to bottom, #BF00FF,#361075);
+  border-radius: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+}
+
+.card-secondary-text {
+  font-family: Helvetica Neue Regular;
+  font-size: 16px;
+  color: #808080;
+  padding-left: 40px;
+}
+
+.background-gradient-events {
+  background: linear-gradient(to bottom, #361075, #4E03FF);
+  border-radius: 6px;
+}
+
+.background-gradient-recruitment {
+  background: linear-gradient(to bottom, #FF9B03, #FF5200);
+  border-radius: 6px;
+}
+
+.background-gradient-members {
+  background: linear-gradient(to bottom, #FF5200, #4E03FF);
+  border-radius: 6px;
+}
+
+.background-gradient-members-two {
+  background: linear-gradient(to bottom, #4E03FF, #361075 );
+  border-radius: 6px;
+}
+
+
+// Parse Backgrounds
+
+.background-gradient-pink {
+  background: linear-gradient(to bottom, #FD3986, #A20442);
+  border-radius: 6px;
+}
+
+.background-gradient-orange {
+  background: linear-gradient(to bottom, #FF5100, #97370A);
+  border-radius: 6px;
+}
+
+.background-gradient-purple {
+  background: linear-gradient(to bottom, #BF00FF, #4F006A);
+  border-radius: 6px;
+}
+
+.background-gradient-blue {
+  background: linear-gradient(to bottom, #3644FF, #1E268D);
+  border-radius: 6px;
+}
+
+.background-gradient-green {
+  background: linear-gradient(to bottom, #5ECC32, #1F6D00);
+  border-radius: 6px;
+}
+
+.background-gradient-grey {
+  background: linear-gradient(to bottom, #808080, #212121);
+  border-radius: 6px;
+}
+// Generic Preset Classes
+
+
+
+  // border-radius: 30%;
+  // height: 200px;
+  // margin: 20px auto;
+  // width: 200px;
+
+  // $border: 5px;
+  // color: #FFF;
+  // background: #000;
+  // background-clip: padding-box;
+  // border: solid $border transparent;
+  // border-radius: 1em;
+
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0; right: 0; bottom: 0; left: 0;
+  //   z-index: -1;
+  //   margin: -$border;
+  //   border-radius: inherit;
+  //   background: linear-gradient(to bottom, #B802F8 0%, #381177 100%);
+  // }
+
+.card-rainbow-gradient-border-two {
+  background-color: #302244;
+  border: 20px solid transparent;
+  border-image: linear-gradient(to bottom, #FF9703 0%, #3b2000 100%);
+  border-image-slice: 1;
+}
+
+.card-title, .card-title :link, .card-title :visited {
+  // position: relative;
+  // border: 4px solid transparent;
+  // border-radius: 2px;
+  // padding: 10px;
+  // border-color: black;
+  /* just to show box-shadow still works fine */
+  // box-shadow: 0 3px 9px white, inset 0 0 9px black;
+}
+
+// .card-rainbow-gradient-border::after {
+//   position: absolute;
+//   top: -10px; bottom: -10px;
+//   left: -10px; right: -10px;
+//   background: linear-gradient(#B802F8, #381177);
+//   content: '';
+//   z-index: -3;
+//   border-radius: 16px;
+// }
+
+.card-title, .card-title :link, .card-title :visited, .card-title :hover {
+  text-decoration: none;
+  color: white;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.card-product-two {
+  overflow: hidden;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  width: 380;
+  margin-bottom: 16px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-info {
+  padding: 16px;
+}
+
+.team-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+}
+
+.user-show-card {
+  margin-top: 20px;
+  width: 650px;
+  background-color: black;
+}
+
+.user-show-card h4 {
+  color: white;
+}
+
+.user-show-card h6 {
+  color: white;
+}
+
+.user-show-card-schedule {
+  width: 440px;
+  height: 350px;
+  background-color: #080808;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 4px #00000080;
+
+}
+
+.user-show-card-schedule p{
+
+  color: white;
+}
+
+.user-show-card img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+// Rainbow
+
+.card-title-test :hover {
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+
+.event-img {
+  height: 100px;
+  width: 100.5%;
+  // background: linear-gradient(90deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)), url("https://i.imgur.com/i33sm1X.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.edit-schedule-card {
+  height: 700px;
+  background-color: #080808;
+}
+
+.event-image {
+  background-size: cover;
+}
+
+.card-inner {
+  border-radius:6px;
+  background-color:#0D0D0DF2;
+  box-shadow: 2px 2px 4px #00000080;
+}
+
+
+.card-inner-team-index {
+  padding-left: 12px;
+  border-radius:6px;
+  background-color:#0D0D0DF2;
+  box-shadow: 2px 2px 4px #00000080;
+  height: 220px;
+  transition: all 0.4s;
+
+}
+
+.taller-inner-card {
+  border-radius:6px;
+  background-color:#0D0D0DF2;
+  box-shadow: 2px 2px 4px #00000080;
+  height: 500px;
+  transition: all 0.4s;
+
+}
