@@ -5,8 +5,14 @@
 
     <meta charset="utf-8">
     <meta name=“description” content="日本のHell Let Looseコミュニティ">
-    <meta name=“keywords” content="Hell Let Loose, 日本HLL, シューターゲーム, Lawrence Kroll, Ruby on Rails, HTML, CSS, JavaScript">
+    <meta name=“keywords” content="Hell Let Loose, 日本HLL, シューターゲーム, HLL Japan, Hell Let Loose Japan, Lawrence Kroll, Ruby on Rails, JavaScript">
     <meta name=“author” content="Lawrence Kroll">
+
+    <meta property="og:title" content="日本のHell Let Looseコミュニティ">
+    <meta property="og:description" content="日本のHell Let Looseコミュニティ - 一緒にHLLやりませんか？">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/812567934551457805/813790907701919844/JPNHLL.png">
+    <meta property="og:url" content="http://www.hll-jpn.net">
+    <meta property="og:type" content="website">
 
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -22,11 +28,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body style="background-color:#79866B;text-align:left;color:white">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-
     <%= yield %>
   </body>
 </html>
