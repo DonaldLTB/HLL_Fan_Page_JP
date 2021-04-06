@@ -2,6 +2,14 @@
   <%= link_to root_path, class: "" do %>
     <%= image_tag "https://cdn.discordapp.com/attachments/812567934551457805/813051684212310036/HLL.png", class: "avatar-large"%>
   <% end %>
+  <div class="topnav", style: >
+    <a class="active" href="../index.html">ホーム</a>
+    <a href="news.html">ニュース</a>
+    <a href="calendar.html">カレンダー</a>
+    <a href="member.html">メンバー</a>
+    <a href="contact.html">コンタクト</a>
+    <a href="about.html">About Us</a>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -27,9 +35,11 @@
           </div>
         </li>
       <% else %>
+      <div class="nav-li-side">
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link", style: 'color: white;' %>
         </li>
+      </div>
       <% end %>
     </ul>
   </div>
