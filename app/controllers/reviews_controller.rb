@@ -28,14 +28,19 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @team = Team.find(params[:id])
-    authorize @team
+    @review = Review.find(params[:id])
+    authorize @review
   end
 
   def update
-    @team = Team.find(params[:id])
-    authorize @team
-    @team.update(team_params)
-    redirect_to team_path(@team)
+    @review = Review.find(params[:id])
+    authorize @review
+    @review.update(review_params)
+    redirect_to review_path(@review)
+  end
+
+  def review_params
+    params.require(:review).permit(:content, :reviewer_id)
+    # params.require(:review).permit(:rating, :content, :reviewer_id, :user_id)
   end
 end
