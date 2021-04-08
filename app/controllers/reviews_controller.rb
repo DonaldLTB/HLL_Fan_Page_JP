@@ -3,6 +3,10 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def new
     @review = Review.new
     authorize @review
@@ -21,5 +25,17 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @team = Team.find(params[:id])
+    authorize @team
+  end
+
+  def update
+    @team = Team.find(params[:id])
+    authorize @team
+    @team.update(team_params)
+    redirect_to team_path(@team)
   end
 end
