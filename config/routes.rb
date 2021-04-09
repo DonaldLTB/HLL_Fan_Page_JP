@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, except: [ :delete ] do
-    resources :events, only: [ :new, :create ]
+    resources :events, except: [ :index ]
     resources :reviews, except: [ :index ]
   end
 
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   patch '/users/:id/edit_schedule'=>'users#edit_schedule'
 
   resources :reviews, only: [ :index ]
+  resources :events, only: [ :index ]
 
 end
