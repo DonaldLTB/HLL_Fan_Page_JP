@@ -5,15 +5,19 @@ class ReviewPolicy < ApplicationPolicy
       end
     end
   
+    def index?
+      true
+    end
+  
     def show?
       true
     end
   
-    def new?
-      create?
+    def update?
+      true
     end
   
-    def create?
+    def edit?
       true
     end
   end
