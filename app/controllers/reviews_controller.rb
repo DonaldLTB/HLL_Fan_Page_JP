@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
-    @reviews = Review.all
+    # @reviews = Review.all
+    @reviews = policy_scope(Review)
   end
 
   def show
