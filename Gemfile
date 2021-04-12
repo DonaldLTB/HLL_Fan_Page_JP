@@ -23,6 +23,7 @@ gem 'faker'
 gem 'discordrb'
 gem 'discordrb-webhooks'
 gem 'pundit'
+gem 'haml'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
