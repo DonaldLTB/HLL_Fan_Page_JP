@@ -1,1 +1,10 @@
 <h1>HI THERE</h1>
+    <div class="form-login">
+        <%= simple_form_for (@review) do |f| %>
+            <%= f.input :topic %>
+            <%= f.input :content %>
+          <%# <%= f.input :XZY, as: :file %>
+            <%= f.input :discord %>
+            <%= f.submit "Create Topic" %>
+        <% end %>
+    </div>
