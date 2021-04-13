@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :reviews, except: [ :index ]
   end
 
-  get '/users/:id/edit_schedule' =>'users#edit_schedule', as: :edit_schedule
-  patch '/users/:id/edit_schedule'=>'users#edit_schedule'
+  #get '/users/:id/edit_schedule' =>'users#edit_schedule', as: :edit_schedule
+  #patch '/users/:id/edit_schedule'=>'users#edit_schedule'
 
   resources :reviews, only: [ :index ]
   resources :events, only: [ :index ]

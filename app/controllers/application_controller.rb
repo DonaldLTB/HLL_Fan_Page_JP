@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  #before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-   devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :encrypted_password, :username, :role, :bio, :rank, :discord) }
+    added_attrs = [:email, :password, :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:password_confirmation])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:password_confirmation])
   end
 end
