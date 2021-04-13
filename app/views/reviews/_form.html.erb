@@ -1,0 +1,8 @@
+    <div class="form-login">
+        <%= simple_form_for (Review.new) do |f| %>
+            <%= f.input :topic %>
+            <%= f.input :content %>
+          <%# <%= f.input :XZY, as: :file %>
+            <%= f.submit "Create Topic" %>
+        <% end %>
+    </div>

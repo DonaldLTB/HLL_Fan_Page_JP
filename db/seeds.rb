@@ -28,7 +28,7 @@ def random_start_end_time(start_time, end_time)
   end
 end
 puts "Creating users"
-10.times do
+2.times do
   # valid start and end time
   # each weekday start and end time
   days_times = []

@@ -10,4 +10,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
   end
+
+  def new
+    @user = User.new
+    authorize @user
+  end
+
+  def create
+    @user = User.new
+    authorize @user
+  end
 end

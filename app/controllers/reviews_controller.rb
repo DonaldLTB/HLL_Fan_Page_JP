@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     authorize @review
 
     if @review.save
-      redirect_to user_path(current_user), notice: 'Review added!'
+      redirect_to reviews_path, notice: 'Review added!'
     else
       render :new
     end
@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :reviewer_id)
+    params.require(:review).permit(:content, :topic, :reviewer_id)
     # params.require(:review).permit(:rating, :content, :reviewer_id, :user_id)
   end
 end
