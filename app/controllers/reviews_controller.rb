@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    authorize @review
   end
 
   def new

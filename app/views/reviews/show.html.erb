@@ -1,0 +1,4 @@
+<h1><%= @review.topic %></h1>
+<p><%= @review.content %></p>
+<p><%= @review.user.email %></p>
+<p><%= time_ago_in_words(@review.created_at)%>前に発表した</p>
