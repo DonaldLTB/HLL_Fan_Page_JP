@@ -2,3 +2,10 @@
 <% unless current_user.nil? %>
     <%= link_to "HLL Wiki", new_user_review_path(current_user.id), class: "nav-link", style: 'color: white;' %>
 <% end %>
+
+<% @reviews.order(created_at: :desc).each do |review| %>
+    <h4><%= review.topic %></h4>
+    <p><%= review.content %></p>
+    <p><%= review.user.email %></p>
+    <p><%= time_ago_in_words(review.created_at)%>前に発表した</p>
+<% end %>
