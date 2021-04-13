@@ -4,7 +4,7 @@
 <% end %>
 
 <% @reviews.order(created_at: :desc).each do |review| %>
-    <h4><%= review.topic %></h4>
+    <h4><%= link_to review.topic, user_review_path(review, review.user.id) %></h4>
     <p><%= review.content %></p>
     <p><%= review.user.email %></p>
     <p><%= time_ago_in_words(review.created_at)%>前に発表した</p>
