@@ -17,16 +17,17 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @owner = User.find(params[:user_id])
+    #@owner = current_user
     # @review.user_id = (params[:user_id])
-    @review.user = @owner
-    @review.reviewer = current_user
+    #@review.user = @owner
     authorize @review
 
     if @review.save
-      redirect_to reviews_path, notice: 'Review added!'
+      raise
+      redirect_to root_path, notice: 'Review added!'
     else
-      render :new
+      raise
+      render :new, notice: "Please try again"
     end
   end
 
@@ -41,9 +42,10 @@ class ReviewsController < ApplicationController
     @review.update(review_params)
     redirect_to review_path(@review)
   end
+  
 
   def review_params
-    params.require(:review).permit(:content, :topic, :reviewer_id)
+    params.require(:review).permit(:content, :topic)
     # params.require(:review).permit(:rating, :content, :reviewer_id, :user_id)
   end
 end

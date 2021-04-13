@@ -1,4 +1,2 @@
 <h1>HI THERE</h1>
-<% unless current_user.nil? %>
-    <%= render 'form' %>
-<% end %>
+<%= link_to "<button>HLL Wiki</button>", new_user_review_path(current_user.id), class: "nav-link", style: 'color: white;' %>

@@ -1,5 +1,5 @@
     <div class="form-login">
-        <%= simple_form_for (Review.new) do |f| %>
+        <%= simple_form_for [ @user, @review ] do |f| %>
             <%= f.input :topic %>
             <%= f.input :content %>
           <%# <%= f.input :XZY, as: :file %>
