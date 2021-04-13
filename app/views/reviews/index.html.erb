@@ -1,2 +1,4 @@
 <h1>HI THERE</h1>
-<%= link_to "<button>HLL Wiki</button>", new_user_review_path(current_user.id), class: "nav-link", style: 'color: white;' %>
+<% unless current_user.nil? %>
+    <%= link_to "HLL Wiki", new_user_review_path(current_user.id), class: "nav-link", style: 'color: white;' %>
+<% end %>

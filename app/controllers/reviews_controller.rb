@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :find_user, only: [ :new, :create ]
   skip_before_action :authenticate_user!, only: :index
 
   def index
@@ -17,16 +18,13 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    #@owner = current_user
+    #@owner = @user
     # @review.user_id = (params[:user_id])
-    #@review.user = @owner
+    @review.user = @user
     authorize @review
-
     if @review.save
-      raise
-      redirect_to root_path, notice: 'Review added!'
+      redirect_to reviews_path, notice: 'Topic Added!'
     else
-      raise
       render :new, notice: "Please try again"
     end
   end
@@ -42,7 +40,12 @@ class ReviewsController < ApplicationController
     @review.update(review_params)
     redirect_to review_path(@review)
   end
-  
+
+  private
+
+  def find_user
+    @user = User.find(params[:user_id])
+  end
 
   def review_params
     params.require(:review).permit(:content, :topic)
