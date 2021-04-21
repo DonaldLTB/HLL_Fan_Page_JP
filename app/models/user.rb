@@ -6,6 +6,10 @@ class User < ApplicationRecord
   # testing u
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  validates :username, presence: true, uniqueness: true
+  validates_format_of :username, with: /^[a-zA-Z0-9_.]*$/, multiline: true
+  validate :validate_username
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
