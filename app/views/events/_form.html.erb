@@ -2,8 +2,8 @@
     <%= simple_form_for [ @user, @event ] do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.input :date, as: :date, html5: true %>
-        <%= f.input :starting_time, as: :time, html5: true %>
+        <%= f.input :day, as: :date, html5: true %>
+        <%= f.input :start_time, as: :time, html5: true %>
         <%= f.input :end_time, as: :time, html5: true %>
         <%# <%= f.input :XZY, as: :file %>
         <%= f.submit "Create Topic" %>

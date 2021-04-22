@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-  before_action :find_team, only: [ :new ]
-
+  before_action :find_user, only: [ :new, :create ]
   def index
     @events = policy_scope(Event)
   end
@@ -12,24 +11,22 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @team = Team.find(params[:team_id])
-    # @accepted = Invite.where(team_id: @team.id)
-    @event.team = @team
+    @event.user = @user
     authorize @event
     if @event.save
-      sleep(1.5)
+      # sleep(1.5)
       # raise
-      sent_event_discord(@event.name, @event.description, @event.day, @event.start_time, @event.end_time, @team)
-      redirect_to team_path(@team)
+      # sent_event_discord(@event.name, @event.description, @event.day, @event.start_time, @event.end_time, @team)
+      redirect_to events_path
     else
-      redirect_to team_path(@team), notice: "Please try again"
+      redirect_to events_path, notice: "Please try again"
     end
   end
 
   private
-
-  def find_team
-    @team = Team.find(params[:team_id])
+  
+  def find_user
+    @user = User.find(params[:user_id])
   end
 
   def event_params
