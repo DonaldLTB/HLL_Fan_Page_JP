@@ -9,7 +9,7 @@
 <div class="topics">
 <% @events.order(created_at: :desc).each do |event| %>
     <div class="topic">
-        <h4 class="title"><%= link_to event.name, user_event_path(event, event.user.id) %></h4>
+        <h4 class="title"><%= event.name %></h4>
         <p>Description: <%= event.description %></p>
         <p>Day: <%= event.day %></p>
         <p>Start: <%= event.start_time %></p>
