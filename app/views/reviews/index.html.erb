@@ -1,7 +1,11 @@
 <h1>HI THERE</h1>
-<% unless current_user.nil? %>
-    <%= link_to "HLL Wiki", new_user_review_path(current_user.id), class: "nav-link", style: 'color: white;' %>
-<% end %>
+<div>
+    <% unless current_user.nil? %>
+    <p>
+        <%= link_to "HLL Wiki Create", new_user_review_path(current_user.id), style: 'color: red;' %>
+    </p>
+    <% end %>
+</div>
 <div class="topics">
 <% @reviews.order(created_at: :desc).each do |review| %>
     <div class="topic">
