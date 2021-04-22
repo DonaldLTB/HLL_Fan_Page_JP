@@ -6,3 +6,16 @@
     <%= link_to "Create Event", new_user_event_path(current_user.id), style: 'color: red;' %>
   </p>
 </div>
+<div class="topics">
+<% @events.order(created_at: :desc).each do |event| %>
+    <div class="topic">
+        <h4 class="title"><%= link_to event.name, user_event_path(event, event.user.id) %></h4>
+        <p>Description: <%= event.description %></p>
+        <p>Day: <%= event.day %></p>
+        <p>Start: <%= event.start_time %></p>
+        <p>End: <%= event.end_time %></p>
+        <p>Created by: <%= event.user.email %></p>
+        <p><%= time_ago_in_words(event.created_at)%>前に発表した</p>
+    </div>
+<% end %>
+</div>
