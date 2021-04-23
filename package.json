@@ -9,7 +9,8 @@
     "bootstrap": "^4.6.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "vmsq": "^2.1.0"
   },
   "version": "0.1.0",
   "devDependencies": {
