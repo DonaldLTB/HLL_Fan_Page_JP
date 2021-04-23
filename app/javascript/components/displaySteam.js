@@ -1,4 +1,4 @@
-const = displaySteam = () => {
+// const displaySteam = () => {
 
 const vmsq = require('vmsq')
 
@@ -22,4 +22,6 @@ stream.on('data', (ip) => {
 stream.on('end', () => {
   console.log(`got ${servers.length} servers`)
 })
-}
+// }
+
+// export {displaySteam};
