@@ -2,10 +2,11 @@
 
   const vmsq = require('vmsq')
 
-  const stream = vmsq('hl2master.steampowered.com:27011', vmsq.EUROPE, {
-  gamedir: 'cstrike',
-  map: 'de_nuke',
-  empty: 1
+  const stream = vmsq('hl2master.steampowered.com:27011', vmsq.ALL, {
+  // gamedir: 'cstrike',
+  // map: 'de_nuke',
+  appid: 686810,
+  // empty: 1
   })
 
   const servers = []
@@ -22,6 +23,7 @@
   stream.on('end', () => {
   console.log(`got ${servers.length} servers`)
   })
+  console.log(stream)
 // }
-
+// console.log(displaySteam)
 // export {displaySteam};
