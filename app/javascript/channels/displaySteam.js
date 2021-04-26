@@ -10,7 +10,7 @@
   })
 
   const servers = []
-
+const displaySteam = () => {
   stream.on('error', (err) => {
   console.error(err)
   })
@@ -24,6 +24,6 @@
   console.log(`got ${servers.length} servers`)
   })
   console.log(stream)
-// }
+}
 // console.log(displaySteam)
-// export {displaySteam};
+export {displaySteam};

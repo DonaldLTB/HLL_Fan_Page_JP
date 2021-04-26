@@ -4,7 +4,7 @@
 </div>
 
 <h1 class='text-center'>I want my JS here only</h1>
-<script src"../components/displaySteam.js">
+<%# <script src"../components/displaySteam.js">
 const vmsq = require('vmsq')
 
 const stream = vmsq('hl2master.steampowered.com:27011', vmsq.EUROPE, {
@@ -27,4 +27,4 @@ stream.on('data', (ip) => {
 stream.on('end', () => {
   console.log(`got ${servers.length} servers`)
 })
-</script>
+</script> %>

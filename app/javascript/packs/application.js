@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("vmsq")
+// require("vmsq")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -28,11 +28,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { displaySteam } from "../components/displaySteam";
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  displaySteam();
-  console.log("hi")
-});
+import { displaySteam } from "../channels/displaySteam";
+displaySteam();
+// document.addEventListener('turbolinks:load', () => {
+//   // Call your functions here, e.g:
+//   // initSelect2();
+//   // displaySteam();
+//   // console.log("hi")
+// });
