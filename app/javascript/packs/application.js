@@ -21,16 +21,16 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap";
+// import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-// import { displaySteam } from "../channels/displaySteam";
+import { displaySteam } from "../channels/displaySteam";
 // console.log("!hi!");
 // console.log(displaySteam());
-// document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbolinks:load', () => {
 //   // Call your functions here, e.g:
 //   // initSelect2();
-//   // displaySteam();
+  displaySteam();
 //   // console.log("hi")
-// });
+});
