@@ -1,5 +1,7 @@
 require 'steam-condenser'
 require 'rbzip2'
+require 'multi_json'
+require 'multi_xml'
 
 
 
@@ -8,14 +10,9 @@ require 'rbzip2'
 # stats = id.game_stats 'tf2'
 # achievements = stats.achievements
 
-master = MasterServer.new(*MasterServer::GOLDSRC_MASTER_SERVER)
-player = SteamId.new("mafia-jp")
-stats = player.most_played_games.class
-# servers = master.servers
+player = SteamId.new("doppel")
+stats = player.total_playtime(686810)
 
-server = GoldSrcServer.new('192.168.0.114', 27016)
 p stats
-p master
-p server.init
-puts "hi"
+
 
