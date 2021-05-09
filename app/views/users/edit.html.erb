@@ -1,2 +1,15 @@
-edit.html.erb
-<p>test edit master2</p>
+<div class="row">
+  <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+    <h1 class="text-center mt-4">Edit Your Account</h1>
+
+      <%= simple_form_for @user, url: user_path(@user) do |f| %>
+
+      <%= f.input :username %>
+      <%= f.input :bio, :input_html => {:rows => 7}  %>
+      <%= f.input :steam_name %>
+      <%= f.input :discord %>
+      <%= f.input :role %>
+      <%= f.button :submit, "Confirm details" %>
+      <% end %>
+  </div>
+</div>
