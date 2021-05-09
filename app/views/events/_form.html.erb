@@ -1,6 +1,6 @@
 <div>
     <%= simple_form_for [ @user, @event ] do |f| %>
-        <%= f.input :name %>
+        <%= f.input :name, label: "Event", collection: ["Team vs. Team イベント", "普通のイベント", "普通のイベント２", "夜イベント", "夜イベント２", "訓練", "訓練2", "Admin イベント"] %>
         <%= f.input :description %>
         <%= f.input :day, as: :date, html5: true %>
         <%= f.input :start_time, as: :time, html5: true %>

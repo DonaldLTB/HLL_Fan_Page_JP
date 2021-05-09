@@ -2,7 +2,7 @@
     <%= simple_form_for [ @user, @review ] do |f| %>
         <%= f.input :topic %>
         <%= f.input :content %>
-        <%# <%= f.input :XZY, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Create Topic" %>
     <% end %>
 </div>

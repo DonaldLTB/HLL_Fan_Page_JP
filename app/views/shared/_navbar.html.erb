@@ -8,8 +8,8 @@
     <%= link_to "HLL Wiki", reviews_path, class: "nav-link", style: 'color: white;' %>
     <%= link_to "イベント", events_path, class: "nav-link", style: 'color: white;' %>
     <%= link_to "メンバー", users_path, class: "nav-link", style: 'color: white;' %>
-    <%= link_to "コンタクト", pages_test_path, class: "nav-link", style: 'color: white;' %>
-    <%= link_to "About Us", pages_test_path, class: "nav-link", style: 'color: white;' %>
+    <%= link_to "コンタクト", pages_contact_path, class: "nav-link", style: 'color: white;' %>
+    <%= link_to "About Us", pages_aboutus_path, class: "nav-link", style: 'color: white;' %>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,21 +17,27 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <!-- 
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
+        -->
         <li class="nav-item dropdown">
           <% if current_user.nil? || current_user.avatar.nil? %>
             <%= image_tag "https://cdn.discordapp.com/attachments/812567934551457805/813051684212310036/HLL.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
+            <% if current_user.avatar.attached? == true %>
              <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "https://cdn.discordapp.com/attachments/812567934551457805/813051684212310036/HLL.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "My profile", user_path(current_user.id), class: "dropdown-item" %>
+            <%= link_to "Edit Profile", edit_user_path(current_user.id), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

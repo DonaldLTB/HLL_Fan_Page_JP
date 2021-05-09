@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :topic)
+    params.require(:review).permit(:content, :topic, photos: [])
     # params.require(:review).permit(:rating, :content, :reviewer_id, :user_id)
   end
 end

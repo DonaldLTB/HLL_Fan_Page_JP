@@ -1,9 +1,31 @@
 .banner {
-  background-image :url("https://cdn.discordapp.com/attachments/727904622114635839/813069608142635008/HLL.png");
+  background-image :url("https://cdn.discordapp.com/attachments/787593111568121857/834762820028465182/0d872a180f73325e.png");
   height: 100%;
+  // background-size: contain;
+  // max-width: 960px;
 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .banner {
+    // width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .banner {
+    // width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .banner {
+    // height: 250px;
+    // width: 150px;
+  }
 }

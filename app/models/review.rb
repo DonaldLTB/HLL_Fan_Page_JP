@@ -3,4 +3,5 @@ class Review < ApplicationRecord
   belongs_to :user
   validates :content, presence: true
   validates :topic, presence: true
+  has_many_attached :photos
 end
