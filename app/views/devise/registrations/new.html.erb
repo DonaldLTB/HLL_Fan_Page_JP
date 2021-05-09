@@ -12,6 +12,12 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "username" }%>
+    <%= f.input :bio, :input_html => {:rows => 7}  %>
+    <%= f.input :steam_name %>
+    <%= f.input :discord %>
+    <%= f.input :role, :collection => ["Commander", "Officer", "Rifleman", "Anti-Tank", "Machine Gunner", "Assault", "Medic", "Engineer", "Support", "Automatic Rifleman", "Spotter", "Sniper", "Tank Commander", "Crewman"] %>
+    <%= f.input :avatar, as: :file,
+                required: true %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

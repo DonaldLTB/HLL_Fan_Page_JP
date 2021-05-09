@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/pages/test' =>'pages#test'
+  get '/pages/aboutus' =>'pages#aboutus'
+  get '/pages/contact' =>'pages#contact'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, except: [ :delete ] do
     resources :events, except: [ :index ]
