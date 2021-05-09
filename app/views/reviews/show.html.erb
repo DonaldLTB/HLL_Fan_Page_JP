@@ -2,3 +2,10 @@
 <p><%= @review.content %></p>
 <p><%= @review.user.email %></p>
 <p><%= time_ago_in_words(@review.created_at)%>前に発表した</p>
+<p>here should go comments</p>
+<% @review.comments.order(created_at: :desc).each do |comment| %>
+    <p><%= comment.reply %></p>
+<% end %>
+<p>
+    <%= link_to "Reply", new_user_review_comment_path(current_user.id, @review.id), style: 'color: red;' %>
+</p>

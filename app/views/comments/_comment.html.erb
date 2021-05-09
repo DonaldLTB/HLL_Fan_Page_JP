@@ -1,0 +1,7 @@
+<div>
+    <%= simple_form_for [ @user, @review, @comment ] do |f| %>
+        <%= f.input :reply %>
+        <%# <%= f.input :XZY, as: :file %>
+        <%= f.submit "Reply" %>
+    <% end %>
+</div>
