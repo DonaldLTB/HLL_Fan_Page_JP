@@ -1,7 +1,7 @@
 <div>
     <%= simple_form_for [ @user, @review, @comment ] do |f| %>
         <%= f.input :reply %>
-        <%# <%= f.input :XZY, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Reply" %>
     <% end %>
 </div>

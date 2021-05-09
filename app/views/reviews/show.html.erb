@@ -3,6 +3,12 @@
 <p><%= @review.user.email %></p>
 <p><%= time_ago_in_words(@review.created_at)%>前に発表した</p>
 <p>here should go comments</p>
+
+    <% @review.photos.each do |photo| %>
+        <% if !photo.nil? %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+    <% end %>
 <% @review.comments.order(created_at: :desc).each do |comment| %>
     <p><%= comment.reply %></p>
 <% end %>
