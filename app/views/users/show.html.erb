@@ -2,7 +2,7 @@
     <div class="container">
       <div class="card-product p-1 text-left" style="background-color:transparent;">
         <% if @user.avatar.attached? == true %>
-          <%= image_tag current_user.avatar, class: "avatar dropdown-toggle"%>
+          <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %>
         <% end %>
         <div style="margin-left: 16px">
           <h2><%= @user.role %></h2>
