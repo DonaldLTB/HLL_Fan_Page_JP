@@ -9,6 +9,7 @@
 }
 
 .card {
+  display: flex;
   text-align: center;
   background-size: cover;
   justify-content: space-around;
@@ -28,5 +29,11 @@
 
 .image-card {
   height: 50px;
-  width: 30px;
+  // width: 30px;
+}
+
+.image-card-win {
+  width: 3em;
+  margin-left: auto;
+  margin-right: auto;
 }
