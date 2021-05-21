@@ -5,7 +5,13 @@
       <p>Total number of users: <%= @users.count %></p>
       <% @users.order(created_at: :asc).each do |user| %>
         <% if user.avatar.attached? == true %>
-          <%= cl_image_tag user.avatar.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag user.avatar.key, transformation: [
+            {effect: "cartoonify"},
+            {radius: "max"},
+            {effect: "outline:100", color: "lightblue"},
+            {background: "lightblue"},
+            {height: 300, crop: "scale"}
+          ] %>
         <% end %>
         <div style="margin-left: 16px">
           <h1><%= user.username %></h1>
