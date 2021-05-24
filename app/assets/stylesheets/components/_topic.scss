@@ -1,7 +1,13 @@
+.topics{
+    display: flex;
+}
+
 .topic{
     //text-align: left;
     margin-top: .25rem;
     font-size: 0.9rem;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
     .title a{
         text-decoration: none;
         color: white;
