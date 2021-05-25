@@ -9,13 +9,13 @@
 }
 
 .card {
-  display: flex;
+  display: inline-block;
   text-align: center;
   background-size: cover;
   justify-content: space-around;
   border-radius: 8px;
-  height: 250px;
-  width: 200px;
+  // height: 250px;
+  // width: 200px;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
   margin-right: 8px;

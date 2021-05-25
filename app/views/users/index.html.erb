@@ -1,9 +1,9 @@
 <!-- member content -->
-<div class="container">
-    <div class="container">
-      <div class="card-product p-1 text-left" style="background-color:transparent;">
-      <p>Total number of users: <%= @users.count %></p>
+<%# <div class="container"> %>
+<p>Total number of users: <%= @users.count %></p>
+    <div class="card-columns">
       <% @users.order(created_at: :asc).each do |user| %>
+      <div class="card">
         <% if user.avatar.attached? == true %>
           <%= cl_image_tag user.avatar.key, transformation: [
             {effect: "cartoonify"},
@@ -12,14 +12,16 @@
             {background: "lightblue"},
             {height: 300, crop: "scale"}
           ] %>
+        <% else %>
+          <%= image_tag "https://cdn.discordapp.com/attachments/812567934551457805/813051684212310036/HLL.png", class: "non-avatar"%>
         <% end %>
-        <div style="margin-left: 16px">
-          <h1><%= user.username %></h1>
-          <h2><%= user.role %></h2>
-          <h3><%= user.steam_name %></h3>
+        <div class="card-body">
+          <h1 class="card-title"><%= user.username %></h1>
+          <h2 class="card-text"><%= user.role %></h2>
+          <h3 class="card-text"><%= user.steam_name %></h3>
         </div>
-      <% end %>
       </div>
+      <% end %>
     </div>
-</div>
+<%# </div> %>
 <!-- media -->
