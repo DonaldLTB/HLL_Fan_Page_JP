@@ -37,3 +37,8 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.card-columns .card {
+  display: inline-flex;
+  width: 100%;
+}
