@@ -8,9 +8,14 @@
   max-width: 960px;
 }
 
-.container h2 {
+.container h1 {
   font-size: 48px;
   font-weight: bold;
+}
+
+.container h2 {
+  font-weight: bold; 
+  margin-top: 8px; 
 }
 
 .container .main-title {
