@@ -1,6 +1,6 @@
 <!-- member content -->
 <%# <div class="container"> %>
-<p>ユーザー人数: <%= @users.count %>名</p>
+<h1>ユーザー人数: <%= @users.count %>名</h1>
     <div class="card-columns">
       <% @users.order(created_at: :asc).each do |user| %>
       <div class="card">

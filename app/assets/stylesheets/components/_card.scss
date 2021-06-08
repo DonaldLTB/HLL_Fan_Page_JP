@@ -18,8 +18,7 @@
   // width: 200px;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
-  margin-right: 8px;
-  margin-bottom: 8px;
+  margin: 8px 8px 8px 8px;
   padding: 6px;
 }
 
@@ -41,4 +40,8 @@
 .card-columns .card {
   display: inline-flex;
   width: 100%;
+}
+
+.card-columns {
+  padding: 16px;
 }
