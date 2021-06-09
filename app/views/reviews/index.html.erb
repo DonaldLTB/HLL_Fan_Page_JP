@@ -7,6 +7,34 @@
     <% end %>
 </div>
 <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Views</th>
+            <th>Author</th>
+            <th>Publish Date</th>
+            <th>No. of Comments</th>
+        </tr>
+        <div class="topics">
+            <% @reviews.order(created_at: :desc).each do |review| %>
+            <div class="topic">
+                <h4 class="title"><%= link_to review.topic, user_review_path(review.user.id, review) %></h4>
+                <td><%= review.content %></td>
+                <td><%= review.user.email %></td>
+                <td><%= time_ago_in_words(review.created_at)%>前に発表した</td>
+                <td>Comments: <%= review.comments.count %></td>
+            </div>
+            <% end %>
+            <td>
+                <%# if review.user == current_user || current_user.admin? %>
+                    <%# <%= link_to "Delete", review_path(review), method: :delete, data: { confirm: 'Are you sure?' }%>
+                <%# end %>
+            </td>
+        </div>
+        </tr>
+    </table>
+</div>
 <div class="topics">
 <% @reviews.order(created_at: :desc).each do |review| %>
     <div class="topic">
