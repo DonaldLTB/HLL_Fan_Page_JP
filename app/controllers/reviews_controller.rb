@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_user, only: [ :new, :create ]
+  before_action :find_user, only: [ :new, :create, :update, :edit, :destroy ]
   skip_before_action :authenticate_user!, only: :index
 
   def index
@@ -40,6 +40,13 @@ class ReviewsController < ApplicationController
     authorize @review
     @review.update(review_params)
     redirect_to review_path(@review)
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    authorize @review
+    redirect_to reviews_path
   end
 
   private
