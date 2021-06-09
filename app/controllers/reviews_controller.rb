@@ -42,6 +42,12 @@ class ReviewsController < ApplicationController
     redirect_to review_path(@review)
   end
 
+  def destroy
+    @review.destroy
+    authorize @review
+    redirect_to reviews_path
+  end
+
   private
 
   def find_user
