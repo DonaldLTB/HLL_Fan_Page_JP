@@ -6,6 +6,7 @@
     </p>
     <% end %>
 </div>
+<div class="col-12 d-flex flex-column justify-content-center align-items-center">
 <div class="topics">
 <% @reviews.order(created_at: :desc).each do |review| %>
     <div class="topic">
@@ -16,4 +17,5 @@
         <p>Comments: <%= review.comments.count %></p>
     </div>
 <% end %>
+</div>
 </div>
