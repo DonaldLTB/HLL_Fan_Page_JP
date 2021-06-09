@@ -28,5 +28,6 @@ class ReviewPolicy < ApplicationPolicy
     def edit?
       true
     end
+    
   end
   

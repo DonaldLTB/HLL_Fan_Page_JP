@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_user, only: [ :new, :create ]
+  before_action :find_user, only: [ :new, :create, :update, :edit, :destroy ]
   skip_before_action :authenticate_user!, only: :index
 
   def index
