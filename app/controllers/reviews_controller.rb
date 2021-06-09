@@ -43,6 +43,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
     authorize @review
     redirect_to reviews_path

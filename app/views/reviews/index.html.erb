@@ -25,12 +25,12 @@
                 <td><%= time_ago_in_words(review.created_at)%>前に発表した</td>
                 <td>Comments: <%= review.comments.count %></td>
             </div>
-            <% end %>
             <td>
-                <%# if review.user == current_user || current_user.admin? %>
-                    <%# <%= link_to "Delete", review_path(review), method: :delete, data: { confirm: 'Are you sure?' }%>
-                <%# end %>
+                <% if review.user == current_user || current_user.admin? %>
+                    <%= link_to "Delete", user_review_path(review.user.id, review), method: :delete, data: { confirm: 'Are you sure?' }%>
+                <% end %>
             </td>
+            <% end %>
         </div>
         </tr>
     </table>
