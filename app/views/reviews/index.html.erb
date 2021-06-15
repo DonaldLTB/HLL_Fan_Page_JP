@@ -12,10 +12,12 @@
         <tr>
             <th>タイトル</th>
             <th>Views</th>
+                <%# add kaminari/impressionist %>
             <th>Author</th>
             <th>発表日</th>
             <th>No. of Comments</th>
         </tr>
+        <%# in a row but need column %>
         <div class="topics">
             <% @reviews.order(created_at: :desc).each do |review| %>
             <div class="topic">
