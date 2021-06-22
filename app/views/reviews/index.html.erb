@@ -28,8 +28,10 @@
                 <td>Comments: <%= review.comments.count %></td>
             </div>
             <td>
-                <% if review.user == current_user || current_user.admin? %>
-                    <%= link_to "Delete", user_review_path(review.user.id, review), method: :delete, data: { confirm: 'Are you sure?' }%>
+                <% unless current_user.nil? %>
+                    <% if review.user == current_user || current_user.admin? %>
+                        <%= link_to "Delete", user_review_path(review.user.id, review), method: :delete, data: { confirm: 'Are you sure?' }%>
+                    <% end %>
                 <% end %>
             </td>
             <% end %>
