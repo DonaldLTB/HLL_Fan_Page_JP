@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :find_user, only: [ :new, :create ]
   def index
     @events = policy_scope(Event)
+    @event_image = Event::EVENT_IMAGE["Team vs. Team イベント"]
   end
 
   def new
