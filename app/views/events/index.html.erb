@@ -16,6 +16,7 @@
         <p>End: <%= event.end_time %></p>
         <p>Created by: <%= event.user.email %></p>
         <p><%= time_ago_in_words(event.created_at)%>前に発表した</p>
+        <%= image_tag @event_image %>
     </div>
 <% end %>
 </div>
