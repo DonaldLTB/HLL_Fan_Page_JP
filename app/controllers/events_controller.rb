@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :find_user, only: [ :new, :create ]
+  before_action :find_user, only: [ :new, :create, :destroy ]
   def index
     @events = policy_scope(Event)
     @event_image = Event::EVENT_IMAGE["Team vs. Team イベント"]
@@ -21,6 +21,13 @@ class EventsController < ApplicationController
     else
       redirect_to events_path, notice: "Please try again"
     end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    authorize @event
+    redirect_to events_path
   end
 
   private
