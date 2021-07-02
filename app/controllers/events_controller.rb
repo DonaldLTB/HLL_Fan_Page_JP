@@ -16,7 +16,6 @@ class EventsController < ApplicationController
     authorize @event
     if @event.save
       # sleep(1.5)
-      # raise
       sent_event_discord(@event.name, @event.description, @event.day, @event.start_time, @event.end_time)
       redirect_to events_path
     else
@@ -46,7 +45,7 @@ class EventsController < ApplicationController
         embed.title = event_name
         embed.color = 16_056_575
         embed.url = "https://hll4jp.herokuapp.com/events"
-        # change LINK to clanparty.net later!!!
+        # change LINK to real URL later!!!
         embed.description = "#{description}!"
         embed.add_field(name: 'Day', value: day, inline: true)
         embed.add_field(name: 'Time', value: "#{start_time.strftime('%H:%M')} - #{end_time.strftime('%H:%M')}", inline: true)
