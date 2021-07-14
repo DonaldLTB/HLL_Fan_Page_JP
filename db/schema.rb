@@ -62,10 +62,12 @@ ActiveRecord::Schema.define(version: 2021_06_08_024145) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
+    t.bigint "reviewer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "topic"
     t.string "photo"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -108,4 +110,5 @@ ActiveRecord::Schema.define(version: 2021_06_08_024145) do
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
   add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
 end
