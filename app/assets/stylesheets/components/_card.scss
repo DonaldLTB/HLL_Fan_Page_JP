@@ -9,7 +9,7 @@
 }
 
 .card {
-  display: inline-block;
+  display: inline-table;
   text-align: center;
   background-size: cover;
   justify-content: space-around;
@@ -38,10 +38,11 @@
 }
 
 .card-columns .card {
-  display: inline-flex;
+  
   width: 100%;
 }
 
 .card-columns {
   padding: 16px;
+  // display: inline-flex;
 }

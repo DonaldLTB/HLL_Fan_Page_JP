@@ -11,7 +11,7 @@
             {effect: "outline:100", color: "lightblue"},
             {background: "lightblue"},
             {quality: "auto", fetch_forma: "auto"},
-            {height: 180, width: 320, crop: "fit"}
+            {height: 176, crop: "fit"}
           ] %>
         <% else %>
           <%= image_tag "https://cdn.discordapp.com/attachments/812567934551457805/813051684212310036/HLL.png", class: "non-avatar"%>
@@ -20,6 +20,7 @@
           <h1 class="card-title"><%= user.username %></h1>
           <h2 class="card-text"><%= user.role %></h2>
           <h3 class="card-text"><%= user.steam_name %></h3>
+          <p class="card-text"><small class="text-muted"><%= user.created_at.strftime("%d %b %Y") %>から参加</small></p>
         </div>
       </div>
       <% end %>
