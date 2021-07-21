@@ -1,16 +1,16 @@
 <div class="row">
   <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-    <h1 class="text-center mt-4">Edit Your Account</h1>
+    <h1 class="text-center mt-4">アカウント編集</h1>
 
       <%= simple_form_for @user, url: user_path(@user) do |f| %>
 
-      <%= f.input :username %>
-      <%= f.input :bio, :input_html => {:rows => 7}  %>
-      <%= f.input :steam_name %>
-      <%= f.input :discord %>
-      <%= f.input :role %>
-      <%= f.input :avatar, as: :file %>
-      <%= f.button :submit, "Confirm details" %>
+      <%= f.input :username, label: "ユーザー名" %>
+      <%= f.input :bio, :input_html => {:rows => 7}, label: "自己紹介" %>
+      <%= f.input :steam_name, label: "Steam名" %>
+      <%= f.input :discord, label: "個人Discord番号（数字）" %>
+      <%= f.input :role, label: "好きな役割" %>
+      <%= f.input :avatar, as: :file, label: "アバター" %>
+      <%= f.button :submit, "完了" %>
       <% end %>
   </div>
 </div>
