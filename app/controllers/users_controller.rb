@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    # add to only allow current_user
     authorize @user
   end
 
