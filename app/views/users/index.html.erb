@@ -1,6 +1,8 @@
 <!-- member content -->
-<%# <div class="container"> %>
-<h1>ユーザー人数: <%= @users.count %>名</h1>
+<div class="container-users">
+  <div class="jst-ttl">
+    <h1>ユーザー人数: <%= @users.count %>名</h1>
+  </div>
     <div class="card-columns">
       <% @users.order(created_at: :asc).each do |user| %>
       <div class="card">
@@ -19,11 +21,11 @@
         <div class="card-body">
           <h1 class="card-title"><%= user.username %></h1>
           <h2 class="card-text">得意役割: <%= user.role %></h2>
-          <h3 class="card-text">Steam名: <%= user.steam_name %></h3>
+          <!-- <h3 class="card-text">Steam名: <%#= user.steam_name %></h3> -->
           <p class="card-text"><small class="text-muted"><%= user.created_at.strftime("%d %b %Y") %>から参加</small></p>
         </div>
       </div>
       <% end %>
     </div>
-<%# </div> %>
+</div>
 <!-- media -->

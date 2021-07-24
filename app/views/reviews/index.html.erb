@@ -23,7 +23,7 @@
             <div class="topic">
                 <h4 class="title"><%= link_to review.topic, user_review_path(review.user.id, review) %></h4>
                 <td><%= review.content %></td>
-                <td><%= review.user.email %></td>
+                <td><%= review.user.username %></td>
                 <td><%= time_ago_in_words(review.created_at)%>前に発表した</td>
                 <td>Comments: <%= review.comments.count %></td>
             </div>
@@ -44,7 +44,7 @@
     <div class="topic">
         <h4 class="title"><%= link_to review.topic, user_review_path(review.user.id, review) %></h4>
         <p><%= review.content %></p>
-        <p><%= review.user.email %></p>
+        <p><%= review.user.username %></p>
         <p><%= time_ago_in_words(review.created_at)%>前に発表した</p>
         <p>Comments: <%= review.comments.count %></p>
     </div>
