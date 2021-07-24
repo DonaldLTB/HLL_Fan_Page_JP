@@ -1,3 +1,4 @@
+<% if current_user == @user %>
 <div class="row">
   <div class="col-lg-4 col-md-6 ml-auto mr-auto">
     <h1 class="text-center mt-4">アカウント編集</h1>
@@ -14,3 +15,6 @@
       <% end %>
   </div>
 </div>
+<% else %>
+  <h1>アクセス不可能</h1>
+<% end %>

@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :find_user, only: [ :new, :create, :destroy ]
+  before_action :find_user, only: [:new, :create, :destroy]
   def index
     @events = policy_scope(Event)
     @event_image = Event::EVENT_IMAGE["Team vs. Team イベント"]
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
   end
 
   private
-  
+
   def find_user
     @user = User.find(params[:user_id])
   end
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
   end
 
   WEBHOOK_URL = ENV["DISCORD"]
-  
+
   def sent_event_discord(event_name, description, day, start_time, end_time)
     require 'discordrb/webhooks'
 
