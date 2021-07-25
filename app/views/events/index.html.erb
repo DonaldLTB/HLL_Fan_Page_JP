@@ -1,31 +1,36 @@
+<% if current_user.admin? %>
+<h1>
+  イベント
+</h1>
 <div>
-  <h1>
-    Events
-  </h1>
   <p>
     <% unless current_user.nil? %>
       <% if current_user.admin? %>
-        <%= link_to "Create Event", new_user_event_path(current_user.id), style: 'background-color: red; color: white;' %>
+        <%= link_to "新イベント作成", new_user_event_path(current_user.id), style: 'background-color: red; color: white;' %>
       <% end %>
     <% end %>
   </p>
 </div>
 <div class="topics">
-<% @events.order(created_at: :desc).each do |event| %>
+  <% @events.order(created_at: :desc).each do |event| %>
     <div class="topic">
         <h4 class="title"><%= event.name %></h4>
-        <p>Description: <%= event.description %></p>
-        <p>Day: <%= event.day.strftime("%d %b %Y") %></p>
-        <p>Start: <%= event.start_time.strftime("%H:%M") %></p>
-        <p>End: <%= event.end_time.strftime("%H:%M") %></p>
-        <p>Created by: <%= event.user.username %></p>
+        <p>内容: <%= event.description %></p>
+        <p>日: <%= event.day.strftime("%d %b %Y") %></p>
+        <p>スタート時間: <%= event.start_time.strftime("%H:%M") %></p>
+        <p>終了時間: <%= event.end_time.strftime("%H:%M") %></p>
+        <p>担当者: <%= event.user.username %></p>
         <p><%= time_ago_in_words(event.created_at)%>前に発表した</p>
         <%#= image_tag event_image %>
         <% unless current_user.nil? %>
             <% if event.user == current_user || current_user.admin? %>
-                <%= link_to "Delete", user_event_path(event.user.id, event), method: :delete, data: { confirm: '本当に消したいですか？' }%>
+                <%= link_to "消す", user_event_path(event.user.id, event), method: :delete, data: { confirm: '本当に消したいですか？' }%>
             <% end %>
         <% end %>
     </div>
-<% end %>
+  <% end %>
 </div>
+<% else %>
+  <h1>アクセスは管理人のみ</h1>
+  <h3>登録したメンバーは公開発表予定</h3>
+<% end %>

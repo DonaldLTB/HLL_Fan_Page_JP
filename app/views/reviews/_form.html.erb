@@ -1,8 +1,8 @@
 <div>
     <%= simple_form_for [ @user, @review ] do |f| %>
-        <%= f.input :topic %>
-        <%= f.input :content %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit "Create New Topic" %>
+        <%= f.input :topic, label: "話題" %>
+        <%= f.input :content, label: "内容" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "写真アップロード" %>
+        <%= f.submit "確定" %>
     <% end %>
 </div>

@@ -1,11 +1,11 @@
 <div>
     <%= simple_form_for [ @user, @event ] do |f| %>
-        <%= f.input :name, label: "Event", collection: ["Team vs. Team イベント", "普通のイベント", "普通のイベント２", "夜イベント", "夜イベント２", "訓練", "訓練2", "Admin イベント"] %>
-        <%= f.input :description %>
-        <%= f.input :day, as: :date, html5: true %>
-        <%= f.input :start_time, as: :time, html5: true %>
-        <%= f.input :end_time, as: :time, html5: true %>
+        <%= f.input :name, label: "イベント", collection: ["Team vs. Team イベント", "普通のイベント", "普通のイベント２", "夜イベント", "夜イベント２", "訓練", "訓練2", "Admin イベント"] %>
+        <%= f.input :description, label: "内容" %>
+        <%= f.input :day, as: :date, html5: true, label: "日" %>
+        <%= f.input :start_time, as: :time, html5: true, label: "スタート時間" %>
+        <%= f.input :end_time, as: :time, html5: true, label: "終了時間" %>
         <%# <%= f.input :XZY, as: :file %>
-        <%= f.submit "Create Topic" %>
+        <%= f.submit "確定" %>
     <% end %>
 </div>
