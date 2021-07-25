@@ -1,7 +1,8 @@
+<% if current_user.admin? %>
+<h1>
+  イベント
+</h1>
 <div>
-  <h1>
-    イベント
-  </h1>
   <p>
     <% unless current_user.nil? %>
       <% if current_user.admin? %>
@@ -11,7 +12,7 @@
   </p>
 </div>
 <div class="topics">
-<% @events.order(created_at: :desc).each do |event| %>
+  <% @events.order(created_at: :desc).each do |event| %>
     <div class="topic">
         <h4 class="title"><%= event.name %></h4>
         <p>内容: <%= event.description %></p>
@@ -27,5 +28,9 @@
             <% end %>
         <% end %>
     </div>
-<% end %>
+  <% end %>
 </div>
+<% else %>
+  <h1>アクセスは管理人のみ</h1>
+  <h3>登録したメンバーは公開発表予定</h3>
+<% end %>
