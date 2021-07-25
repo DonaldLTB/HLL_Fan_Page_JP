@@ -25,12 +25,12 @@
                 <td><%= review.content %></td>
                 <td><%= review.user.username %></td>
                 <td><%= time_ago_in_words(review.created_at)%>前に発表した</td>
-                <td>Comments: <%= review.comments.count %></td>
+                <td>コメント数: <%= review.comments.count %></td>
             </div>
             <td>
                 <% unless current_user.nil? %>
                     <% if review.user == current_user || current_user.admin? %>
-                        <%= link_to "Delete", user_review_path(review.user.id, review), method: :delete, data: { confirm: 'Are you sure?' }%>
+                        <%= link_to "消す", user_review_path(review.user.id, review), method: :delete, data: { confirm: 'Are you sure?' }%>
                     <% end %>
                 <% end %>
             </td>
@@ -46,7 +46,7 @@
         <p><%= review.content %></p>
         <p><%= review.user.username %></p>
         <p><%= time_ago_in_words(review.created_at)%>前に発表した</p>
-        <p>Comments: <%= review.comments.count %></p>
+        <p>コメント数: <%= review.comments.count %></p>
     </div>
 <% end %>
 </div>
