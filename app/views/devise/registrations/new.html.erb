@@ -15,7 +15,7 @@
                 input_html: { autocomplete: "username" }%>
     <%= f.input :bio, label: "自己紹介", :input_html => {:rows => 7}  %>
     <%= f.input :steam_name, label: "Steam名" %>
-    <%= f.input :discord, label: "Discord名" %>
+    <%= f.input :discord, label: "個人Discord（名前#数字　例:Bot#1552）" %>
     <%= f.input :role, label: "得意役割", :collection => ["Commander", "Officer", "Rifleman", "Anti-Tank", "Machine Gunner", "Assault", "Medic", "Engineer", "Support", "Automatic Rifleman", "Spotter", "Sniper", "Tank Commander", "Crewman"] %>
     <%= f.input :avatar, as: :file,
                 label: "アバター", 

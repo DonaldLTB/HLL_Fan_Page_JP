@@ -8,8 +8,8 @@
       <%= f.input :username, label: "ユーザー名" %>
       <%= f.input :bio, :input_html => {:rows => 7}, label: "自己紹介" %>
       <%= f.input :steam_name, label: "Steam名" %>
-      <%= f.input :discord, label: "個人Discord番号（数字）" %>
-      <%= f.input :role, label: "好きな役割" %>
+      <%= f.input :discord, label: "個人Discord（名前#数字　例:Bot#1552）" %>
+      <%= f.input :role, label: "好きな役割", :collection => ["Commander", "Officer", "Rifleman", "Anti-Tank", "Machine Gunner", "Assault", "Medic", "Engineer", "Support", "Automatic Rifleman", "Spotter", "Sniper", "Tank Commander", "Crewman"] %>
       <%= f.input :avatar, as: :file, label: "アバター" %>
       <%= f.button :submit, "完了" %>
       <% end %>
