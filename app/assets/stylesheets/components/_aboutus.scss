@@ -1,4 +1,77 @@
-.admins {
+// .admins {
+//   // display: flex;
+//   // align-items: flex-start;
+// }
+
+// .aboutus-title h3{
+//   margin-top: 6px;
+// }
+
+// .aboutus {
+//   display: inline-block;
+// }
+
+// first try
+
+// .card-admins {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 8px;
+//   background: white;
+//   padding: 8px 16px;
+//   border: 1px solid rgb(235,235,235);
+// }
+
+// .card-admins .card-admins-content {
+//   flex-grow: 1;
+//   padding: 0 24px;
+// }
+
+// .card-admins-content p {
+//   margin: 0;
+//   line-height: 1.4;
+// }
+
+// second try
+.card-admins {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 16px;
+  border-radius: 2em;
+  justify-content: center;
+  margin-right: 10%;
+  margin-left: 11%;
+}
+
+.card-admins:hover {
+  transform: scale(1.1);
+}
+
+.card-admins img {
+  height: 100%;
+  width: 110px;
+  object-fit: cover;
+}
+
+.card-admins h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-admins p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-admins .card-admins-content {
+  padding: 16px;
 }

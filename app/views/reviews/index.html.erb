@@ -1,57 +1,61 @@
 <h1 class="top-bar">フォーラム</h1>
-<% if current_user.admin? %>
-<div>
-    <% unless current_user.nil? %>
-    <p>
-        <%= link_to "新しいトピックの作成", new_user_review_path(current_user.id), style: 'color: red;' %>
-    </p>
-    <% end %>
-</div>
-<div class="col-12 d-flex flex-column justify-content-center align-items-center">
-    <div>
-        <table>
-            <tr>
-                <th>タイトル</th>
-                <th>視聴者数</th>
-                <%# add kaminari/impressionist %>
-                <th>作家</th>
-                <th>発表日</th>
-                <th>コメント数</th>
-            </tr>
-            <%# in a row but need column %>
-            <div class="topics">
-                <% @reviews.order(created_at: :desc).each do |review| %>
-                <div class="topic">
-                    <h4 class="title"><%= link_to review.topic, user_review_path(review.user.id, review) %></h4>
-                    <td><%= review.content %></td>
-                    <td><%= review.user.username %></td>
-                    <td><%= time_ago_in_words(review.created_at)%>前に発表した</td>
-                    <td>コメント数: <%= review.comments.count %></td>
-                </div>
-                <td>
-                    <% unless current_user.nil? %>
-                        <% if review.user == current_user || current_user.admin? %>
-                            <%= link_to "消す", user_review_path(review.user.id, review), method: :delete, data: { confirm: 'Are you sure?' }%>
-                        <% end %>
-                    <% end %>
-                </td>
-                <% end %>
-            </div>
-            </tr>
-        </table>
-    </div>
-    <div class="topics">
-    <% @reviews.order(created_at: :desc).each do |review| %>
-        <div class="topic">
-            <h4 class="title"><%= link_to review.topic, user_review_path(review.user.id, review) %></h4>
-            <p><%= review.content %></p>
-            <p><%= review.user.username %></p>
-            <p><%= time_ago_in_words(review.created_at)%>前に発表した</p>
-            <p>コメント数: <%= review.comments.count %></p>
-        </div>
-    <% end %>
-    </div>
-</div>
+<% if current_user.nil? %>
+    <h1>近日公開</h1>
 <% else %>
-<h1>近日公開</h1>
+    <% if current_user.admin? || current_user == nil %>
+    <div>
+        <% unless current_user.nil? %>
+        <p>
+            <%= link_to "新しいトピックの作成", new_user_review_path(current_user.id), style: 'color: red;' %>
+        </p>
+        <% end %>
+    </div>
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+        <div>
+            <table>
+                <tr>
+                    <th>タイトル</th>
+                    <th>視聴者数</th>
+                    <%# add kaminari/impressionist %>
+                    <th>作家</th>
+                    <th>発表日</th>
+                    <th>コメント数</th>
+                </tr>
+                <%# in a row but need column %>
+                <div class="topics">
+                <% @reviews.order(created_at: :desc).each do |review| %>
+                    <div class="topic">
+                        <h4 class="title"><%= link_to review.topic, user_review_path(review.user.id, review) %></h4>
+                        <td><%= review.content %></td>
+                        <td><%= review.user.username %></td>
+                        <td><%= time_ago_in_words(review.created_at)%>前に発表した</td>
+                        <td>コメント数: <%= review.comments.count %></td>
+                    </div>
+                    <td>
+                        <% unless current_user.nil? %>
+                            <% if review.user == current_user || current_user.admin? %>
+                            <%= link_to "消す", user_review_path(review.user.id, review), method: :delete, data: { confirm: '本当に消したいですか？' }%>
+                            <% end %>
+                        <% end %>
+                    </td>
+                    <% end %>
+                </div>
+                </tr>
+            </table>
+        </div>
+        <div class="topics">
+        <% @reviews.order(created_at: :desc).each do |review| %>
+            <div class="topic">
+                <h4 class="title"><%= link_to review.topic, user_review_path(review.user.id, review) %></h4>
+                <p><%= review.content %></p>
+                <p><%= review.user.username %></p>
+                <p><%= time_ago_in_words(review.created_at)%>前に発表した</p>
+                <p>コメント数: <%= review.comments.count %></p>
+            </div>
+        <% end %>
+        </div>
+    </div>
+    <% else %>
+        <h1>近日公開</h1>
+    <% end %>
 <% end %>
