@@ -6,6 +6,8 @@
                     <div class="col-md-5 text-center">
                         <% if @user.avatar.attached? == true %>
                           <%= cl_image_tag @user.avatar.key, height: 200, width: 200, crop: :fill %>
+                        <% else %>
+                            <%= image_tag "question_mark.png", class: "image-card-extra" %><br><%= "アバター追加してください" %>
                         <% end %>
                     
                     </div>
