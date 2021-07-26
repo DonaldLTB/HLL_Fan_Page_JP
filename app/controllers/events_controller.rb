@@ -40,18 +40,18 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :description, :day, :start_time, :end_time)
   end
 
-  WEBHOOK_URL = ENV["DISCORD"]
+  WEBHOOK_URL = ENV["DISCORDS"]
 
   def sent_event_discord(event_name, description, day, start_time, end_time)
     require 'discordrb/webhooks'
 
-    client = Discordrb::Webhooks::Client.new(url: ENV["DISCORD"])
+    client = Discordrb::Webhooks::Client.new(url: ENV["DISCORDS"])
     client.execute do |builder|
       builder.content = "@everyone NEW Event! 参加したい方は :white_check_mark:"
       builder.add_embed do |embed|
         embed.title = event_name
         embed.color = 16_056_575
-        embed.url = "https://hll4jp.herokuapp.com/events"
+        embed.url = "https://hll-jp.com/events"
         # change LINK to real URL later!!!
         embed.description = "#{description}!"
         embed.add_field(name: 'Day', value: day, inline: true)
