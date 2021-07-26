@@ -1,4 +1,5 @@
-<div>
+<div class="row">
+  <div class="col-lg-4 col-md-6 ml-auto mr-auto">
     <%= simple_form_for [ @user, @event ] do |f| %>
         <%= f.input :name, label: "イベント", collection: ["Team vs. Team イベント", "普通のイベント", "普通のイベント２", "夜イベント", "夜イベント２", "訓練", "訓練2", "Admin イベント"] %>
         <%= f.input :description, label: "内容" %>
@@ -8,4 +9,5 @@
         <%# <%= f.input :XZY, as: :file %>
         <%= f.submit "確定" %>
     <% end %>
+  </div>
 </div>

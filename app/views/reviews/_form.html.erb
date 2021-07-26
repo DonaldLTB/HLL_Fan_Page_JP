@@ -1,8 +1,10 @@
-<div>
+<div class="row">
+  <div class="col-lg-4 col-md-6 ml-auto mr-auto">
     <%= simple_form_for [ @user, @review ] do |f| %>
         <%= f.input :topic, label: "話題" %>
         <%= f.input :content, label: "内容" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "写真アップロード" %>
         <%= f.submit "確定" %>
     <% end %>
+  </div>
 </div>
