@@ -47,7 +47,7 @@ class EventsController < ApplicationController
 
     client = Discordrb::Webhooks::Client.new(url: ENV["DISCORDS"])
     client.execute do |builder|
-      builder.content = "@everyone NEW Event! 参加したい方は :white_check_mark:"
+      builder.content = "NEW Event! 参加したい方は :white_check_mark:"
       builder.add_embed do |embed|
         embed.title = event_name
         embed.color = 16_056_575
