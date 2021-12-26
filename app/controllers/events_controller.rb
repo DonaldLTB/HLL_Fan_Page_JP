@@ -47,11 +47,11 @@ class EventsController < ApplicationController
 
     client = Discordrb::Webhooks::Client.new(url: ENV["DISCORDS"])
     client.execute do |builder|
-      builder.content = "NEW Event! 参加したい方は :white_check_mark:"
+      builder.content = "イベント"
       builder.add_embed do |embed|
         embed.title = event_name
         embed.color = 16_056_575
-        embed.url = "https://hll-jp.com/events"
+        embed.url = "https://hlsl-jp.com/"
         # change LINK to real URL later!!!
         embed.description = "#{description}!"
         embed.add_field(name: 'Day', value: day, inline: true)
